@@ -37,6 +37,7 @@ object Libs {
 
     const val tmdbJava = "com.uwetrottmann.tmdb2:tmdb-java:2.2.0"
     const val traktJava = "com.uwetrottmann.trakt5:trakt-java:6.5.0"
+    const val tvdbJava = "com.uwetrottmann.thetvdb-java:thetvdb-java:2.3.0"
 
     const val appauth = "net.openid:appauth:0.7.1"
 

@@ -51,3 +51,7 @@ fun <T : TmdbImageEntity> Collection<T>.findHighestRatedBackdrop(): T? {
     return filter { it.type == ImageType.BACKDROP }
         .maxBy { it.rating + (if (it.isPrimary) 10f else 0f) }
 }
+
+interface TvdbIdEntity {
+    val tvdbId: Int?
+}

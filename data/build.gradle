@@ -30,6 +30,8 @@ dependencies {
     api project(':trakt')
     api project(':tmdb')
 
+    api Libs.tvdbJava
+
     api Libs.AndroidX.Room.common
     implementation Libs.AndroidX.collection
 

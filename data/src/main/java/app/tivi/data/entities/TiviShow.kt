@@ -39,6 +39,7 @@ data class TiviShow(
     @ColumnInfo(name = "trakt_id") override val traktId: Int? = null,
     @ColumnInfo(name = "tmdb_id") override val tmdbId: Int? = null,
     @ColumnInfo(name = "imdb_id") val imdbId: String? = null,
+    @ColumnInfo(name = "tvdb_id") override val tvdbId: Int? = null,
     @ColumnInfo(name = "overview") val summary: String? = null,
     @ColumnInfo(name = "homepage") val homepage: String? = null,
     @ColumnInfo(name = "trakt_rating") val traktRating: Float? = null,
@@ -55,7 +56,7 @@ data class TiviShow(
     @ColumnInfo(name = "airs_day") val airsDay: DayOfWeek? = null,
     @ColumnInfo(name = "airs_time") val airsTime: LocalTime? = null,
     @ColumnInfo(name = "airs_tz") val airsTimeZone: ZoneId? = null
-) : TiviEntity, TraktIdEntity, TmdbIdEntity {
+) : TiviEntity, TraktIdEntity, TmdbIdEntity, TvdbIdEntity {
     @Ignore
     constructor() : this(0)
 

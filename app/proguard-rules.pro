@@ -80,22 +80,12 @@
 # Dagger
 -dontwarn com.google.errorprone.annotations.*
 
-# Keep Trakt-java Entity names (for GSON)
--keepclassmembers class com.uwetrottmann.trakt5.entities.** {
+# Keep trakt-java, tmdb-java and tvdb-java entity names (for GSON)
+-keepclassmembers class com.uwetrottmann.*.entities.** {
     <fields>;
     <init>(...);
 }
--keepclassmembers class com.uwetrottmann.trakt5.enums.** {
-    <fields>;
-    <init>(...);
-}
-
-# Keep TMDb Entity names (for GSON)
--keepclassmembers class com.uwetrottmann.tmdb2.entities.** {
-    <fields>;
-    <init>(...);
-}
--keepclassmembers class com.uwetrottmann.tmdb2.enums.** {
+-keepclassmembers class com.uwetrottmann.*.enums.** {
     <fields>;
     <init>(...);
 }
