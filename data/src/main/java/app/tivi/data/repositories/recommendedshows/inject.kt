@@ -42,7 +42,7 @@ internal class RecommendedShowsModule {
         @ForStore scope: CoroutineScope
     ): RecommendedShowsStore {
         return StoreBuilder.fromNonFlow { page: Int ->
-            val response = traktRecommendedShows(page, 20)
+            val response = traktRecommendedShows(page, 15)
             if (page == 0 && response is Success) {
                 lastRequestStore.updateLastRequest()
             }

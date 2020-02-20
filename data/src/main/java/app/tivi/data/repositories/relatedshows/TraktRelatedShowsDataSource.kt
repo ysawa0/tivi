@@ -44,10 +44,10 @@ internal class TraktRelatedShowsDataSource @Inject constructor(
     }
     private val resultMapper = pairMapperOf(showMapper, entryMapper)
 
-    suspend operator fun invoke(showId: Long): Result<List<Pair<TiviShow, RelatedShowEntry>>> {
+    suspend operator fun invoke(showId: Long, pageSize: Int = 10): Result<List<Pair<TiviShow, RelatedShowEntry>>> {
         val traktId = traktIdMapper.map(showId)
             ?: return ErrorResult(IllegalArgumentException("No Trakt ID for show with ID: $showId"))
-        return showService.get().related(traktId.toString(), 0, 10, Extended.NOSEASONS)
+        return showService.get().related(traktId.toString(), 0, pageSize, Extended.NOSEASONS)
             .executeWithRetry()
             .toResult(resultMapper)
     }

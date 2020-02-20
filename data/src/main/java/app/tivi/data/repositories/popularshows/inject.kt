@@ -42,7 +42,7 @@ internal class PopularShowsModule {
         @ForStore scope: CoroutineScope
     ): PopularShowsStore {
         return StoreBuilder.fromNonFlow { page: Int ->
-            val response = traktPopularShows(page, 20)
+            val response = traktPopularShows(page, 15)
             if (page == 0 && response is Success) {
                 lastRequestStore.updateLastRequest()
             }
