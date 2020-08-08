@@ -33,6 +33,10 @@ import dev.chrisbanes.insetter.Insetter
 import dev.chrisbanes.insetter.Side
 import javax.inject.Inject
 
+import com.microsoft.appcenter.AppCenter;
+import com.microsoft.appcenter.analytics.Analytics;
+import com.microsoft.appcenter.crashes.Crashes;
+
 @AndroidEntryPoint
 class MainActivity : TiviActivity() {
     private val viewModel: HomeActivityViewModel by viewModels()
@@ -65,6 +69,8 @@ class MainActivity : TiviActivity() {
         if (savedInstanceState == null) {
             setupBottomNavigationBar()
         }
+        AppCenter.start(getApplication(), "fb920cc5-e621-4761-8912-a1d855962e0e",
+                  Analytics.class, Crashes.class);
     }
 
     override fun onStart() {

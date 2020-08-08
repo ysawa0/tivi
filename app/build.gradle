@@ -230,6 +230,10 @@ dependencies {
     testImplementation Libs.AndroidX.Test.core
     testImplementation Libs.AndroidX.Test.rules
     testImplementation Libs.AndroidX.Test.espressoCore
+
+    def appCenterSdkVersion = '3.3.0'
+    implementation "com.microsoft.appcenter:appcenter-analytics:${appCenterSdkVersion}"
+    implementation "com.microsoft.appcenter:appcenter-crashes:${appCenterSdkVersion}"
 }
 
 android.applicationVariants.all { variant ->
